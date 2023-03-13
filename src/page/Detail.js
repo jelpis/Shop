@@ -1,32 +1,45 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
-let YellowBtn = styled.button`
-  background: ${(props) => props.bg};
-  color: ${(props) => (props.bg == 'blue' ? 'white' : 'black')};
-  padding: 10px;
-`;
+// let YellowBtn = styled.button`
+//   background: ${(props) => props.bg};
+//   color: ${(props) => (props.bg == 'blue' ? 'white' : 'black')};
+//   padding: 10px;
+// `;
 
-let Box = styled.div`
-  background: grey;
-  padding: 20px;
-`;
+// copy
+// let NewBtn = styled.button(YellowBtn)`
+// `;
 
-let NewBtn = styled.button(YellowBtn)`
-`
+// let Box = styled.div`
+//   background: grey;
+//   padding: 20px;
+// `;
 
 function Detail(props) {
   let { id } = useParams();
-  let finder = props.content.find(function (x) {
-    return x.id == id;
+  let finder = props.content.find((x) => x.id == id);
+  let [alert, setAlert] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAlert(false);
+    }, 2000);
   });
 
   return (
     <div className="container">
-      <Box>
-        <YellowBtn bg="blue">버튼</YellowBtn>
-        <YellowBtn bg="yellow">버튼</YellowBtn>
-      </Box>
+      {/* <Box> */}
+      {/* <YellowBtn bg="blue">버튼</YellowBtn>
+      <YellowBtn bg="yellow">버튼</YellowBtn> */}
+      {/* </Box> */}
+
+      {alert == true ? (
+        <div className="container">
+          <div className="alert alert-warning"> 2초 이내 구매 시 할인</div>
+        </div>
+      ) : null}
 
       <div className="row">
         <div className="col-md-6">

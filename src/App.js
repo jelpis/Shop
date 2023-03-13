@@ -59,7 +59,7 @@ function App() {
             </>
           }
         />
-        <Route path="/detail" element={<Detail content={content} />} />
+        {/* <Route path="/detail" element={<Detail content={content} />} /> */}
         <Route path="/detail/:id" element={<Detail content={content} />} />
         {/* <Route path="/about/member" element={<About />} /> */}
         <Route path="/about" element={<About />}>
