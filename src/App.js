@@ -9,6 +9,7 @@ import baby from './img/baby.jpg';
 import feet from './img/feet.jpg';
 import sailboat from './img/sailboat.jpg';
 import Detail from './page/Detail';
+import Cart from './routes/Cart';
 
 function App() {
   let [content] = useState(data);
@@ -70,6 +71,9 @@ function App() {
           <Route path="one" element={<div>첫 주문시 양배추즙 서비스</div>} />
           <Route path="two" element={<div>생일 기념 쿠폰받기</div>} />
         </Route>
+
+        <Route path="/cart" element={<Cart />} />
+
         <Route path="*" element={<>없는 페이지요</>} />
       </Routes>
     </div>
